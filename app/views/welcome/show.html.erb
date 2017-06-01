@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+
+<style>
+	body {
+		background-image: url(<%= asset_path 'various_colors.png' %>);
+		background-size: 100%,100%;
+	}
+</style>
+
+<body>
+	<div class = "row">
+
+		<div class="col-sm-4"></div>
+
+		<div class="col-sm-4">
+			<h1> Black Ice?</h1>
+
+			<%= bootstrap_form_tag url: '', multipart: true, class: "col-sm-4" do |f| %>
+				<%= f.text_field :current_weather, label: "Current Weather Conditions", placeholder: "Heavy Snow, Heavy Rain, Light Rain, Clear, etc.", required: true%>
+				<%= f.text_field :air_temp, label: "Current Temperature (°C)", placeholder: "Black Ice occurs < 5°" , required: true%>
+				<%= f.text_field :wind_speed, label: "Wind Speed (km/h)", placeholder: "Wind Speed must be < 36 km/h" , required: true%>
+				<%= f.text_field :pop, label: "Change of Precipitation (%)", placeholder: "At least 70%" , required: true%>
+				<%= f.text_field :temp_drop, label: "Temperature Drop over Last 12 Hours (°C)", placeholder: "Drop of at least 11°C to produce Black Ice" , required: true%>
+
+				<%= f.submit "Check Conditions", class: "btn-lg btn-success center-block " %>
+			<% end %>
+		</div>	
+
+		<div class="col-sm-4"></div>
+
+	</div>	
+
+</body>
+
+</HTML>	
